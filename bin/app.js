@@ -2,6 +2,7 @@
 const PORT = process.env.PORT || 3000;
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const graphqlHTTP = require('express-graphql');
 const schema = require('./components/race/raceGraphql');
@@ -12,8 +13,8 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}, (err, c
   if (err) console.log(err);
 })
 
-
 app
+  .use(cors())
   .use('/graphql', graphqlHTTP({
     schema,
     graphiql: true

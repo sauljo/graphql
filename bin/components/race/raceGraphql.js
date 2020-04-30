@@ -12,10 +12,11 @@ const UsersType = new GraphQLObjectType({
     speed: { type: GraphQLInt },
     time: { type: GraphQLFloat }
   }),
+
   async resolve(parent, args) {
-    const page = parent.page ? parent.page : 0;
+    let page = parent.page ? parent.page : 1;
     const count = parent.count ? parent.count : 50;
-    const skip = page * count;
+    const skip = --page * count;
     const unlimited = parent.unlimited;
     const users = unlimited ? await User.find({}) : await User.find({}).skip(skip).limit(count);
     return sortAscending(users, 'time');
@@ -32,10 +33,11 @@ const Query = new GraphQLObjectType({
         count: { type: GraphQLInt },
         unlimited: { type: GraphQLBoolean }
       },
+      
       async resolve(parent, args) {
-        const page = args.page ? args.page : 0;
+        let page = args.page ? args.page : 1;
         const count = args.count ? args.count : 50;
-        const skip = page * count;
+        const skip = --page * count;
         const unlimited = args.unlimited;
         const users = unlimited ? await User.find({}) : await User.find({}).skip(skip).limit(count);
         return sortAscending(users, 'time');
