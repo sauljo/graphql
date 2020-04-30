@@ -1,0 +1,9 @@
+{
+  "env": {
+    "MONGO_USER": "heroku_slmm69wm",
+    "MONGO_PASSWORD": "pnjtbrff2h0mtb4kufgion20q2",
+    "MONGO_HOST": "ds147799.mlab.com",
+    "MONGO_PORT": 47799,
+    "MONGO_DB": "heroku_slmm69wm"
+  }
+}
