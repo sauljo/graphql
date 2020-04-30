@@ -1,8 +1,7 @@
 # testwork-graphql
 
-app launch instruction:
-  command: 
-    - "npm i"
-    - "npm run start" = starts a local server for node js
-    - "npm run dev" = starts a local server for react application
-  
+Application launch instruction:
+
+  - "npm i"
+  - "npm run start" = starts a local server for Node js Application
+  - "npm run dev" = starts a local server for React js Application
