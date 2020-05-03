@@ -2,10 +2,10 @@
   "name": "testwork-graphql",
   "version": "1.0.0",
   "description": "",
-  "main": "./bin/app.js",
+  "main": "./lib/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./bin/app.js",
+    "start": "nodemon ./lib/app.js",
     "dev": "webpack-dev-server"
   },
   "repository": {
